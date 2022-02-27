@@ -1,26 +1,26 @@
 .text-color {
-  color: #c94d00;
+    color: #e15a50;
 }
 
 .icon-color {
-  color: #c94d00;
+    color: #e15a50;
 }
 
 .bg-color {
-  background-color: #c94d00;
+    background-color: #e15a50;
 }
 
 .bg-color-dark {
-  background-color: #b14706;
+    background-color: #b14706;
 }
 
 .bg-color-light {
-  background-color: #f7e4d9;
+    background-color: #f7f7f7;
 }
 
 a.link-color,
 i.link-color {
-  color: #c94d00;
+    color: #e15a50;
 }
 
 a.link-color:hover,
@@ -29,113 +29,113 @@ a.link-color:focus,
 i.link-color:hover,
 i.link-color:active,
 i.link-color:focus {
-  color: #b14706;
+    color: #b14706;
 }
 
 .btn-color,
 .inverse a.btn-color {
-  background-color: #c94d00;
+    background-color: #e15a50;
 }
 
 .btn-color:hover,
 .btn-color:active,
 .btn-color:focus {
-  background-color: #b14706 !important;
+    background-color: #b14706 !important;
 }
 
 .btn-border-color,
 a.btn-border-color {
-  color: #c94d00 !important;
-  border-color: #c94d00;
+    color: #e15a50 !important;
+    border-color: #e15a50;
 }
 
 .btn-border-color:hover,
 .btn-border-color:active,
 .btn-border-color:focus {
-  color: #b14706 !important;
-  border-color: #b14706;
+    color: #b14706 !important;
+    border-color: #b14706;
 }
 
 .input-group .btn {
-  color: #c94d00 !important;
+    color: #e15a50 !important;
 }
 
 .form-control:focus,
 .form-control:focus + .input-group-btn .btn {
-  border-color: #c94d00;
+    border-color: #e15a50;
 }
 
 .error .form-control,
 .error .btn {
-  border-color: #c94d00 !important;
+    border-color: #e15a50 !important;
 }
 
 .message {
-  color: #c94d00;
+    color: #e15a50;
 }
 
 .message-icon {
-  border-color: #c94d00;
+    border-color: #e15a50;
 }
 
 .panel-color {
-  border-color: #c94d00;
+    border-color: #e15a50;
 }
 
 .panel-color > .panel-heading {
-  background-color: #c94d00;
+    background-color: #e15a50;
 }
 
 .panel-color.active > .panel-heading {
-  color: #c94d00;
+    color: #e15a50;
 }
 
 .tp-bannertimer {
-  background-color: #c94d00;
+    background-color: #e15a50;
 }
 
 .dark-version .rs-dot .tp-bullet.selected,
 .dark-version .rs-dot .tp-bullet:hover {
-  background-color: #c94d00;
+    background-color: #e15a50;
 }
 
 .dark-version .owl-theme .owl-dots .owl-dot.active span,
 .dark-version .owl-theme .owl-dots .owl-dot:hover span {
-  background-color: #c94d00;
+    background-color: #e15a50;
 }
 
 .logo-color span {
-  background-image: url("../../images/logo-red-orange.png");
+    background-image: url("../../images/logo.png");
 }
 
 .ball-pulse-color > div {
-  background-color: #c94d00;
+    background-color: #e15a50;
 }
 
 .navbar-icon span {
-  background-color: #c94d00;
+    background-color: #e15a50;
 }
 
 .price-marker {
-  background-color: #c94d00;
+    background-color: #e15a50;
 }
 
 .speech-bubble-color {
-  background-color: #c94d00;
+    background-color: #e15a50;
 }
 
 .speech-bubble-color:after {
-  border-color: #c94d00 transparent transparent;
+    border-color: #e15a50 transparent transparent;
 }
 
 .speech-bubble-light {
-  background-color: #f7e4d9;
+    background-color: #f7e4d9;
 }
 
 .speech-bubble-light:after {
-  border-color: #f7e4d9 transparent transparent;
+    border-color: #f7e4d9 transparent transparent;
 }
 
 .circles-valueStroke {
-  stroke: #c94d00;
+    stroke: #e15a50;
 }

@@ -316,39 +316,6 @@ $(document).ready(function () {
 
     /* _____________________________________
 
-     Mail Chimp
-     _____________________________________ */
-
-    if ($('#mc-form').length) {
-      $('#mc-form').ajaxChimp({
-        callback: mailchimpCallback,
-        // Replace the URL above with your mailchimp URL (put your URL inside '').
-        url: ''
-      });
-    }
-
-    // callback function when the form submitted, show the notification box
-    function mailchimpCallback(resp) {
-      var form = $('#mc-form'),
-        messageContainer = $('#message-newsletter');
-
-      form.find('.form-group').removeClass('error');
-      if (resp.result === 'error') {
-        form.find('.form-group').addClass('error');
-      } else {
-        form.find('.form-control').fadeIn().val('');
-      }
-
-      messageContainer.slideDown('slow', 'swing');
-
-      setTimeout(function () {
-        messageContainer.slideUp('slow', 'swing');
-      }, 10000);
-    }
-
-
-    /* _____________________________________
-
      Charts / Circle Animation
      _____________________________________ */
 

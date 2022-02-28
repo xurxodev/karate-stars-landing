@@ -12,69 +12,44 @@
  */
 
 (function ($, window, document, undefined) {
-  'use strict';
+    "use strict";
 
-  var form = $('#contact-form'),
-    messageContainer = $('#message-contact'),
-    messageText = $('#message-contact .message-text');
+    var form = $("#contact-form"),
+        messageContainer = $("#message-contact"),
+        messageText = $("#message-contact .message-text");
 
+    form.submit(function (e) {
+        // remove the error class
+        form.find(".form-group").removeClass("error");
 
-  form.submit(function (e) {
+        // get the form data
+        var formData = {
+            name: $('input[name="form-name"]').val(),
+            from_email: $('input[name="form-email"]').val(),
+            message: $('textarea[name="form-message"]').val(),
+        };
 
+        emailjs.send("mailgun", "template_HtOCJajp", formData).then(
+            function () {
+                // display success message
+                messageText.html("Thanks, email sent correctly");
+                form.find(".form-control").fadeIn().val("");
 
-    // remove the error class
-    form.find('.form-group').removeClass('error');
+                messageContainer.slideDown("slow", "swing");
+                setTimeout(function () {
+                    messageContainer.slideUp("slow", "swing");
+                }, 10000);
+            },
+            function (err) {
+                messageText.html("An error has ocurred sending the email");
 
-    var errorAll = '';
+                messageContainer.slideDown("slow", "swing");
+                setTimeout(function () {
+                    messageContainer.slideUp("slow", "swing");
+                }, 10000);
+            }
+        );
 
-    // get the form data
-    var formData = {
-      'name': $('input[name="form-name"]').val(),
-      'email': $('input[name="form-email"]').val(),
-      'message': $('textarea[name="form-message"]').val()
-    };
-
-
-    // process the form
-    $.ajax({
-      type: 'POST',
-      url: 'php/contact-process.php',
-      data: formData,
-      dataType: 'json',
-      encode: true
-    }).done(function (data) {
-      // handle errors
-      if (!data.success) {
-
-        if (data.errors.name) {
-          $('#name-field').addClass('error');
-          errorAll = data.errors.name;
-        }
-
-        if (data.errors.email) {
-          $('#email-field').addClass('error');
-          errorAll = errorAll + ' ' + data.errors.email;
-        }
-
-        if (data.errors.message) {
-          $('#message-field').addClass('error');
-          errorAll = errorAll + ' ' + data.errors.message;
-        }
-        messageText.html(errorAll);
-      } else {
-        // display success message
-        messageText.html(data.confirmation);
-        form.find('.form-control').fadeIn().val('');
-      }
-      messageContainer.slideDown('slow', 'swing');
-      setTimeout(function () {
-        messageContainer.slideUp('slow', 'swing');
-      }, 10000);
-    }).fail(function (data) {
-      // for debug
-      console.log(data)
+        e.preventDefault();
     });
-
-    e.preventDefault();
-  });
-}(jQuery, window, document));
+})(jQuery, window, document);

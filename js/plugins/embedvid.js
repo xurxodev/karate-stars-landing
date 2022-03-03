@@ -8,13 +8,13 @@ var Video = function (container) {
         } else if (id["type"] == "v") {
             $.ajax({
                 method: "GET",
-                url: "http://vimeo.com/api/v2/video/" + id["id"] + ".json",
+                url: "https://vimeo.com/api/v2/video/" + id["id"] + ".json",
                 dataType: "json",
             })
                 .done(function (data) {
                     callback({ type: "v", id: id["id"], url: data[0].thumbnail_large });
                 })
-                .fail(function () {
+                .fail(function (error) {
                     console.log(error);
                 });
         }
@@ -27,7 +27,7 @@ var Video = function (container) {
             callback({
                 type: "y",
                 id: id["id"],
-                url: "http://i2.ytimg.com/vi/" + id["id"] + "/hqdefault.jpg",
+                url: "https://i2.ytimg.com/vi/" + id["id"] + "/hqdefault.jpg",
             });
         }
     }
